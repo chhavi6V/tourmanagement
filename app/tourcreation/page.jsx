@@ -6,7 +6,7 @@ import { LocalizationProvider, DatePicker } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import styles from './tourcreation.css'
 
-export const TourForm = ({ tour }) => {
+const TourForm = ({ tour }) => {
   const router = useRouter();
   const startingTourData = {
     title: "",
@@ -109,3 +109,4 @@ export const TourForm = ({ tour }) => {
   );
 };
 
+module.exports = TourForm;
