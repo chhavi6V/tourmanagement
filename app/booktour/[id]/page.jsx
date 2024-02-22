@@ -95,7 +95,7 @@ export default function BookTourPage({ params }) {
         <Typography variant="h4" component="h1" className='heading'>Book Tour</Typography>
         <form className='formContainer' onSubmit={handleSubmit}>
           <TextField
-            className='inputField'
+            className='usernameInput'
             required
             label="User Name"
             value={tourData.user}

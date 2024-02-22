@@ -30,6 +30,10 @@
     left: 0;
 }
 
+.dateBook{
+    margin-top: 20px;
+}
+
 .recurrence{
     justify-content: center;
     margin: 20px;
@@ -63,4 +67,9 @@
 .cardButton{
     align-items: center;
     margin-left: 38%;
+}
+
+.usernameInput{
+    width: 350px;
+    margin: 20px;
 }
