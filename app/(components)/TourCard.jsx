@@ -3,8 +3,7 @@ import { Typography, Grid, Card, CardActions, CardContent, Button, Box} from '@m
 import styles from '../tourcreation/tourcreation.css'
 import Link from "next/link";
 
-const TourCard = ({tour}) => {
-    // console.log(tour)
+export default function TourCard({tour}){
     return(
         <Card variant="outlined">
             <React.Fragment>
@@ -32,5 +31,3 @@ const TourCard = ({tour}) => {
         </Card>
     )
 } 
-
-export default TourCard;
