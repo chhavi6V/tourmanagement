@@ -1,0 +1,66 @@
+.formContainer{
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.heading{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    color: rgb(119, 198, 224);
+}
+
+.inputField{
+    width: 550px;
+}
+
+.datePicker{
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    margin-left: 0;
+    left: 0;
+}
+
+.recurrence{
+    justify-content: center;
+    margin: 20px;
+    margin-left: 0;
+    width: 550px;
+}
+
+.submitButton{
+    background-color: rgb(119, 198, 224);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.submitButton:hover{
+    background-color: rgb(21, 117, 149);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.listdiv{
+    margin-left: 180px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.cardButton{
+    align-items: center;
+    margin-left: 38%;
+}
