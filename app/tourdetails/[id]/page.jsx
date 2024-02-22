@@ -29,8 +29,6 @@ export default async function TourDetailsPage({params}) {
   
     const tours = data.foundTour;
 
-  // if (!tours) return <Typography variant="h5" component="h2">Loading...</Typography>;
-
   return (
     <Container component="main" maxWidth="sm" style={{ marginTop: '20px' }}>
       <Paper style={{ padding: '20px' }}>
