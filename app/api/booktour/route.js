@@ -1,11 +1,11 @@
-import Tour from "../../(models)/booking";
+import Booking from "../../(models)/booking"; // Corrected the import path
 import { NextResponse } from "next/server";
 
 export async function GET() {
   try {
-    const tours = await Tour.find({});
+    const book = await Booking.find({});
 
-    return NextResponse.json({ tours }, { status: 200 });
+    return NextResponse.json({ book }, { status: 200 });
   } catch (err) {
     console.log(err);
     return NextResponse.json({ message: "Error", err }, { status: 500 });
@@ -15,11 +15,15 @@ export async function GET() {
 export async function POST(req) {
   try {
     const body = await req.json();
-    const booking = body.bookTour;
+    const { username, selectedDate} = body; // Extract userName and tourId from the request body
 
-    await Tour.create(tourData);
+    // Create a new booking with the userName, selectedDate, and tourId
+    await Booking.create({
+      username,
+      selectedDate: new Date(selectedDate) // Ensure selectedDate is a Date object
+    });
 
-    return NextResponse.json({ message: "Tour Created" }, { status: 201 });
+    return NextResponse.json({ message: "Tour booked" }, { status: 201 });
   } catch (err) {
     console.log(err);
     return NextResponse.json({ message: "Error", err }, { status: 500 });

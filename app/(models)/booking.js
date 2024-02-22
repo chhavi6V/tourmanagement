@@ -1,30 +1,30 @@
 import mongoose, { Schema } from "mongoose";
 
-mongoose.connect(process.env.MONGODB_URI,{
+// Connect to MongoDB
+mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-}).then(() => console.log('MongoDB connected'))
+})
+.then(() => console.log('MongoDB connected'))
 .catch(err => console.log(err));
 
+// Use native promises
 mongoose.Promise = global.Promise;
 
-const bookingSchema = new mongoose.Schema({
-    tourId: {
-      type: mongoose.Schema.Types.ObjectId,
-      required: true,
-    },
-    userId: {
-      type: String, // Assuming a simple string for user ID, adjust as per your authentication logic
-      required: true,
-    },
-    selectedDate: {
-      type: Date,
-      required: true,
-    },
-    // Add other relevant fields for the booking data
+// Define the Booking schema
+const bookingSchema = new Schema({
+  username: { 
+    type: String,
+    required: true,
+  },
+  selectedDate: {
+    type: Date,
+    required: true,
+  },
 });
-  
 
-const Booking = mongoose.model('Booking', bookingSchema);
+// Compile the Booking model if it's not already compiled
+const Booking = mongoose.models.Booking || mongoose.model('Booking', bookingSchema);
 
+// Export the Booking model
 module.exports = Booking;

@@ -63,12 +63,45 @@ export default function BookTourPage({ params }) {
     return true;
   };
 
+  const handleSubmit = async (e) => {
+    alert('Booking Submitted...')
+    e.preventDefault();
+    
+    const payload = {
+      username: tourData.user, 
+      selectedDate: selectedDate.toISOString(), 
+    };
   
+    try {
+      const res = await fetch("/api/booktour", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+  
+      if (!res.ok) {
+        throw new Error("Failed to create booking");
+      }
+    } catch (error) {
+      console.error("Error during booking:", error);
+    }
+  };  
+
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <Container maxWidth="sm" style={{ marginTop: '20px' }}>
         <Typography variant="h4" component="h1" className='heading'>Book Tour</Typography>
-        <form className='formContainer'>
+        <form className='formContainer' onSubmit={handleSubmit}>
+          <TextField
+            className='inputField'
+            required
+            label="User Name"
+            value={tourData.user}
+            onChange={(e) => setTourData({ ...tourData, user: e.target.value })}
+            id="title"
+          />
           <DatePicker
             label="Select Date"
             value={dayjs(selectedDate)}
@@ -79,7 +112,7 @@ export default function BookTourPage({ params }) {
             shouldDisableDate={(date) => !validateDate(dayjs(date))}
           />
           <Button 
-            
+            onClick={handleSubmit}
             className='submitButton' 
             type="button" 
             variant="contained" 
