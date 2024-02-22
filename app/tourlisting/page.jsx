@@ -38,11 +38,10 @@ export default async function TourListingPage() {
     <div className='listdiv'>
       <Grid container spacing={2}>
         {tours.map((tour,_index) => (
-            <Grid 
+          <Grid key={_index}
             item xs={5}>
             <TourCard 
               id={_index}
-              key={_index}
               tour={tour}
             />
           </Grid>
