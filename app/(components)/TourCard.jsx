@@ -3,6 +3,7 @@ import { Typography, Grid, Card, CardActions, CardContent, Button, Box} from '@m
 import styles from '../tourcreation/tourcreation.css'
 import Link from "next/link";
 
+
 export default function TourCard({tour}){
     return(
         <Card variant="outlined">
@@ -23,7 +24,7 @@ export default function TourCard({tour}){
             <CardActions className='cardButton'>
               <Link href={`/tourdetails/${tour._id}`} style={{ display: "contents" }}>
                 <Button className='submitButton' size="small">
-                    More Details
+                    More Details...
                 </Button>
             </Link>
             </CardActions>
