@@ -1,19 +1,21 @@
-import axios from "axios";
+"use client"
+import React from "react";
+import { useRouter } from "next/navigation";
+import { TextField, Button, FormControl, InputLabel, Select, MenuItem, FormGroup, FormControlLabel, Checkbox } from '@mui/material';
 
-export default async function Home() {
-  // try {
-  //   const tours = await axios.get('/api/tourcreate');
-  //   console.log(tours);
-  // } catch (error) {
-  //   console.log('Internal error', error);
-  // }
+export default function Home() {
+  const router = useRouter();
 
+  const handleCreate = () => {
+    router.refresh();
+    router.push("/tourcreation");
+  };
       return (
     <div>
       <h1>Welcome to the Tour App</h1>
-      {/* <TourListingPage
-      tour={tours}/> */}
-        
+      <Button className='submitButton' type="submit" variant="contained" color='success' onClick={handleCreate}>
+            Create Tour
+      </Button>
     </div>
   );
 }

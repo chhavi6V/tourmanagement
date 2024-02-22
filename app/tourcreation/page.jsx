@@ -101,7 +101,7 @@ const TourForm = ({ tour }) => {
             ))}
           </FormGroup>
         )}
-        <Button className='submitButton' type="submit" variant="contained" color='success'>
+        <Button className='submitButton' type="submit" variant="contained" color='success' onClick={handleSubmit}>
             Create Tour</Button>
       </form>
     </LocalizationProvider>
